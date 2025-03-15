@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive CSS Notes - Zerodha Landing Page</title>
+    <style>
+        body {
+            font-family: sans-serif;
+            line-height: 1.6;
+            margin: 20px;
+        }
+
+        h1, h2, h3 {
+            color: #333;
+        }
+
+        h2 {
+            margin-top: 2em;
+            border-bottom: 1px solid #ddd;
+            padding-bottom: 0.5em;
+        }
+
+        .section {
+            margin-bottom: 2em;
+        }
+
+        .interactive-area {
+            margin-top: 1em;
+            padding: 1em;
+            border: 1px solid #ccc;
+            background-color: #fafafa;
+            display: flex;
+            gap: 1em;
+        }
+
+        .input-area, .output-area {
+            flex: 1;
+        }
+
+        .interactive-area textarea {
+            width: 100%;
+            height: 300px; /* Increased height for Zerodha code */
+            padding: 0.5em;
+            border: 1px solid #ccc;
+            font-family: monospace;
+            resize: vertical;
+        }
+
+        .interactive-area button {
+            padding: 0.5em 1em;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            cursor: pointer;
+            display: block;
+            width: 100%;
+            margin-top: 0.5em;
+        }
+        .interactive-area button:hover {
+            background-color: #3e8e41;
+        }
+
+        .interactive-result {
+            border: 1px solid #ccc;
+            padding: 1em;
+            min-height: 50px;
+            overflow: auto;
+        }
+
+
+        .notes {
+            margin-top: 1rem;
+        }
+
+        .note-title {
+            font-size: 1.2rem;
+            margin-bottom: 0.3rem;
+        }
+
+        .note-list > ul > li {
+            margin-left: 1rem;
+        }
+        .code-example pre{
+            background-color: #f5f5f5;
+            border: 1px solid #ddd;
+            padding: 1em;
+            overflow-x: auto;
+            margin-bottom: 1em;
+        }
+    </style>
+</head>
+<body>
+    <h1>Interactive CSS Notes - Zerodha Landing Page Example</h1>
+
+    <p>These notes demonstrate how to build a basic structure of the Zerodha landing page using HTML and inline CSS styles, based on the CSS properties and Flexbox concepts we've learned.</p>
+
+
+    <section class="section">
+        <h2>2.8 Zerodha Landing Page Example</h2>
+
+        <div class="interactive-area">
+            <div class="input-area">
+                <label for="interactive-code-zerodha">Zerodha Landing Page HTML (Try modifying the styles):</label>
+                <textarea id="interactive-code-zerodha">
+<div style="display: flex; justify-content: space-between; padding: 20px; box-shadow: 0 2px 5px #ddd;">
+    <div>
+        <img src="image.png" width="120" alt="Zerodha Logo">
+    </div>
+    <div style="display: flex;">
+        <span style="padding: 20px; color: #666; cursor: pointer;">Sign up</span>
+        <span style="padding: 20px; color: #666; cursor: pointer;">About</span>
+        <span style="padding: 20px; color: #666; cursor: pointer;">Products</span>
+        <span style="padding: 20px; color: #666; cursor: pointer;">Pricing</span>
+        <span style="padding: 20px; color: #666; cursor: pointer;">Support</span>
+    </div>
+</div>
+
+<div style="display: flex; justify-content: center; padding-top: 60px;">
+    <img src="page.png" width="900" alt="Zerodha Landing Image">
+</div>
+<div style="display: flex; justify-content: center; padding-top: 40px;">
+    <h1 style="font-weight: 400; font-size: 2.5rem;">Invest in everything</h1>
+</div>
+<div style="display: flex; justify-content: center; padding-top: 10px;">
+    <h3 style="font-weight: 400; color: #777;">Online platform to invest in stocks, derivatives, mutual funds, and more</h3>
+</div>
+<div style="display: flex; justify-content: center; padding-top: 30px;">
+    <div style="background-color: #387ed1; color: white; padding: 15px 40px; border-radius: 3px; cursor: pointer; font-size: 1.2rem;">
+        Sign up now
+    </div>
+</div>
+                </textarea>
+                <button onclick="updateOutput('interactive-code-zerodha', 'interactive-result-zerodha')">Update Output</button>
+            </div>
+            <div class="output-area">
+                <div class="interactive-result" id="interactive-result-zerodha">
+                    <!-- Zerodha page will be rendered here -->
+                </div>
+            </div>
+        </div>
+
+        <div class="notes">
+            <div class="note-title">Explanation of CSS used in Zerodha Example:</div>
+            <div class="note-list">
+                <ul>
+                    <li><b>Top Navigation Bar (First <div>):</b>
+                        <ul>
+                            <li><code>display: flex; justify-content: space-between;</code>: Uses Flexbox to position logo on the left and navigation links on the right, with space in between.</li>
+                            <li><code>padding: 20px;</code>: Adds padding around the navigation bar content.</li>
+                            <li><code>box-shadow: 0 2px 5px #ddd;</code>: Adds a subtle box shadow at the bottom of the navigation bar.</li>
+                        </ul>
+                    </li>
+                    <li><b>Logo and Navigation Links (Inside Top Bar):</b>
+                        <ul>
+                            <li>Logo (<img>): <code>width: 120px;</code> sets the logo width.</li>
+                            <li>Navigation Links (<div style="display: flex;"> and <span>): <code>display: flex;</code> on the container div arranges links horizontally. <code>padding: 20px; color: #666; cursor: pointer;</code> styles each link with padding, grey color, and pointer cursor on hover.</li>
+                        </ul>
+                    </li>
+                    <li><b>Main Landing Image (Second <div>):</b>
+                        <ul>
+                            <li><code>display: flex; justify-content: center;</code>: Centers the image horizontally using Flexbox.</li>
+                            <li><code>padding-top: 60px;</code>: Adds space above the image.</li>
+                            <li><code>width: 900px;</code>: Sets the image width.</li>
+                        </ul>
+                    </li>
+                    <li><b>Headings ("Invest in everything" and Subheading) (Third and Fourth <div>):</b>
+                        <ul>
+                            <li><code>display: flex; justify-content: center;</code>: Centers the headings horizontally.</li>
+                            <li><code>padding-top</code>: Adds space above the headings.</li>
+                            <li>Heading Styles (on <h1> and <h3>): <code>font-weight: 400;</code> sets a lighter font weight. <code>font-size: 2.5rem;</code> sets a larger font size for the main heading. <code>color: #777;</code> sets a grey color for the subheading.</li>
+                        </ul>
+                    </li>
+                    <li><b>"Sign up now" Button (Fifth <div>):</b>
+                        <ul>
+                            <li><code>display: flex; justify-content: center;</code>: Centers the button horizontally.</li>
+                            <li><code>padding-top: 30px;</code>: Adds space above the button.</li>
+                            <li>Button Styles (on inner <div>): <code>background-color: #387ed1; color: white; padding: 15px 40px; border-radius: 3px; cursor: pointer; font-size: 1.2rem;</code> styles the button with blue background, white text, padding, rounded corners, pointer cursor, and larger font size.</li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+
+    </section>
+
+
+    <script>
+        // Function to update the output area
+        function updateOutput(textareaId, outputId) {
+            const code = document.getElementById(textareaId).value;
+            document.getElementById(outputId).innerHTML = code;
+        }
+
+        // Initialize Zerodha Example Output
+        document.getElementById('interactive-result-zerodha').innerHTML = document.getElementById('interactive-code-zerodha').value;
+
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive CSS Notes</title>
+    <style>
+        body {
+            font-family: sans-serif;
+            line-height: 1.6;
+            margin: 20px;
+        }
+
+        h1, h2, h3 {
+            color: #333;
+        }
+
+        h2 {
+            margin-top: 2em;
+            border-bottom: 1px solid #ddd;
+            padding-bottom: 0.5em;
+        }
+
+        .section {
+            margin-bottom: 2em;
+        }
+
+        .interactive-area {
+            margin-top: 1em;
+            padding: 1em;
+            border: 1px solid #ccc;
+            background-color: #fafafa;
+            display: flex; /* Use flexbox for side-by-side layout */
+            gap: 1em; /* Add some space between input and output */
+        }
+
+        .input-area, .output-area {
+            flex: 1; /* Both areas take equal width */
+            /* border: 1px solid blue; /*For debugging */
+        }
+
+        .interactive-area textarea {
+            width: 100%;
+            height: 150px;
+            padding: 0.5em;
+            border: 1px solid #ccc;
+            font-family: monospace;
+            resize: vertical;
+        }
+
+        .interactive-area button {
+            padding: 0.5em 1em;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            cursor: pointer;
+            display: block; /* Make button occupy full width */
+            width: 100%; /* Make button occupy full width */
+            margin-top: 0.5em; /* Space between textarea and button */
+        }
+         .interactive-area button:hover {
+            background-color: #3e8e41;
+        }
+
+
+        .interactive-result {
+            border: 1px solid #ccc;
+            padding: 1em;
+            min-height: 50px;
+            overflow: auto; /* Add scrollbars if content overflows */
+        }
+
+        .notes {
+            margin-top: 1rem;
+        }
+
+        .note-title {
+            font-size: 1.2rem;
+            margin-bottom: 0.3rem;
+        }
+
+        .note-list > ul > li {
+            margin-left: 1rem;
+        }
+        .code-example pre{
+            background-color: #f5f5f5;
+            border: 1px solid #ddd;
+            padding: 1em;
+            overflow-x: auto; /* Add horizontal scroll for long lines */
+            margin-bottom: 1em;
+        }
+    </style>
+</head>
+<body>
+    <h1>Interactive CSS Notes</h1>
+
+    <p>These notes cover the basics of CSS (Cascading Style Sheets) for styling and positioning HTML elements.  Each section includes code examples and interactive areas where you can experiment.</p>
+
+    <section class="section">
+        <h2>2.1 Introduction to CSS</h2>
+        <div class="notes">
+            <div class="note-title">Notes:</div>
+            <div class="note-list">
+                <ul>
+                    <li><b>What is CSS?</b> CSS (Cascading Style Sheets) is a language used to *style* HTML elements. While HTML provides the structure (what elements are on the page), CSS controls their appearance (how they look) and their positioning (where they are on the page).</li>
+                    <li><b>Two Main Purposes of CSS:</b>
+                        <ul>
+                            <li><b>Styling:</b> Changing colors, fonts, sizes, backgrounds, borders, and other visual aspects of elements.</li>
+                            <li><b>Positioning:</b> Arranging elements on the page (left, right, center, top, bottom, etc.).</li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <section class="section">
+        <h2>2.2 Inline CSS: Adding Styles Directly to HTML Elements</h2>
+        <div class="notes">
+            <div class="note-title">Notes:</div>
+                <div class="note-list">
+                    <ul>
+                        <li>The simplest way to add CSS is directly within an HTML tag using the style attribute. This is called inline CSS.</li>
+                        <li>
+                            <b>Syntax</b>
+                            <div class = "code-example">
+                                <pre><code><element style="property1: value1; property2: value2; ..."></code></pre>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+          </div>
+        <div class="interactive-area">
+            <div class="input-area">
+                <label for="interactive-code-1">Try it yourself:</label>
+                <textarea id="interactive-code-1"><h1 style="color: blue; background-color: yellow;">Hello, CSS!</h1></textarea>
+                <button onclick="updateOutput('interactive-code-1', 'interactive-result-1')">Update Output</button>
+            </div>
+            <div class="output-area">
+                <div class="interactive-result" id="interactive-result-1"></div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section">
+        <h2>2.3 Common CSS Properties (for Styling)</h2>
+          <div class="notes">
+            <div class="note-title">Notes:</div>
+                <div class="note-list">
+                  <ul>
+                      <li>No need to memorize all of them; you can look them up as needed. Muscle memory will come with practice.</li>
+                  </ul>
+                </div>
+          </div>
+
+        <h3>Color</h3>
+        <div class="interactive-area">
+            <div class="input-area">
+                <label for="interactive-code-color">Try changing the color:</label>
+                <textarea id="interactive-code-color"><p style="color: green;">This text is now green.</p></textarea>
+                <button onclick="updateOutput('interactive-code-color', 'interactive-result-color')">Update</button>
+            </div>
+             <div class="output-area">
+                <div class="interactive-result" id="interactive-result-color"></div>
+            </div>
+        </div>
+
+
+        <h3>Background Color</h3>
+        <div class="interactive-area">
+            <div class="input-area">
+                <label for="interactive-code-bg">Try different background colors:</label>
+                <textarea id="interactive-code-bg"><div style="background-color: lightblue;">This div has a light blue background.</div></textarea>
+                <button onclick="updateOutput('interactive-code-bg', 'interactive-result-bg')">Update</button>
+            </div>
+            <div class="output-area">
+                <div class="interactive-result" id="interactive-result-bg"></div>
+            </div>
+        </div>
+
+
+        <h3>Border Radius</h3>
+        <div class="interactive-area">
+            <div class="input-area">
+                <label for="interactive-code-radius">Adjust the border-radius:</label>
+                <textarea id="interactive-code-radius"><div style="background-color: lightgray; border-radius: 20px;">More rounded corners</div></textarea>
+                <button onclick="updateOutput('interactive-code-radius', 'interactive-result-radius')">Update</button>
+            </div>
+            <div class="output-area">
+                <div class="interactive-result" id="interactive-result-radius"></div>
+            </div>
+        </div>
+
+        <h3>Border</h3>
+        <div class="interactive-area">
+            <div class="input-area">
+                <label for="interactive-code-border">Change border style, width, and color:</label>
+                <textarea id="interactive-code-border"><div style="border: 1px dotted red;">Dotted red border</div></textarea>
+                <button onclick="updateOutput('interactive-code-border', 'interactive-result-border')">Update</button>
+            </div>
+            <div class="output-area">
+              <div class="interactive-result" id="interactive-result-border"></div>
+            </div>
+        </div>
+
+        <h3>Padding</h3>
+        <div class="interactive-area">
+            <div class="input-area">
+                <label for="interactive-code-padding">Experiment with padding values:</label>
+                <textarea id="interactive-code-padding"><div style="background-color: lightblue; padding: 10px 30px;">10px top/bottom, 30px left/right</div></textarea>
+                <button onclick="updateOutput('interactive-code-padding', 'interactive-result-padding')">Update</button>
+            </div>
+             <div class="output-area">
+                <div class="interactive-result" id="interactive-result-padding"></div>
+            </div>
+        </div>
+
+        <h3>Margin</h3>
+        <div class="interactive-area">
+            <div class="input-area">
+                <label for="interactive-code-margin">Try different margin values:</label>
+                <textarea id="interactive-code-margin"><div style="background-color: lightgreen; margin-top: 50px;">50px top margin</div></textarea>
+                <button onclick="updateOutput('interactive-code-margin', 'interactive-result-margin')">Update</button>
+            </div>
+            <div class="output-area">
+                <div class="interactive-result" id="interactive-result-margin"></div>
+            </div>
+        </div>
+
+
+        <h3>Box Shadow</h3>
+        <div class="interactive-area">
+             <div class="input-area">
+                <label for="interactive-code-shadow">Experiment with shadow offsets, blur, and color:</label>
+                <textarea id="interactive-code-shadow"><div style="box-shadow: -2px 2px 10px gray;">Different shadow</div></textarea>
+                <button onclick="updateOutput('interactive-code-shadow', 'interactive-result-shadow')">Update</button>
+            </div>
+            <div class="output-area">
+                <div class="interactive-result" id="interactive-result-shadow"></div>
+            </div>
+        </div>
+
+        <h3>Font Size</h3>
+        <div class="interactive-area">
+            <div class="input-area">
+                <label for="interactive-code-font-size">Change the font size:</label>
+                <textarea id="interactive-code-font-size"><p style="font-size: 16px;">Smaller text</p></textarea>
+                <button onclick="updateOutput('interactive-code-font-size', 'interactive-result-font-size')">Update</button>
+            </div>
+            <div class="output-area">
+              <div class="interactive-result" id="interactive-result-font-size"></div>
+            </div>
+        </div>
+
+        <h3>Font Weight</h3>
+        <div class="interactive-area">
+            <div class="input-area">
+                <label for="interactive-code-font-weight">Change the font weight:</label>
+                <textarea id="interactive-code-font-weight"><p style="font-weight: 400;">Normal text</p></textarea>
+                <button onclick="updateOutput('interactive-code-font-weight', 'interactive-result-font-weight')">Update</button>
+            </div>
+            <div class="output-area">
+                <div class="interactive-result" id="interactive-result-font-weight"></div>
+            </div>
+        </div>
+
+        <h3>Cursor</h3>
+        <div class="interactive-area">
+            <div class="input-area">
+                <label for="interactive-code-cursor">Change the cursor:</label>
+                <textarea id="interactive-code-cursor"><div style="cursor: wait;">Wait cursor</div></textarea>
+                <button onclick="updateOutput('interactive-code-cursor', 'interactive-result-cursor')">Update</button>
+            </div>
+            <div class="output-area">
+                <div class="interactive-result" id="interactive-result-cursor"></div>
+            </div>
+        </div>
+    </section>
+    <section class="section">
+      <h2>2.4 Chrome Developer Tools (for Debugging and Experimenting)</h2>
+        <div class="notes">
+            <div class="note-title">Notes:</div>
+            <div class="note-list">
+                <ul>
+                    <li><b>Accessing Developer Tools:</b> Right-click on a webpage and select "Inspect" (or "Inspect Element").</li>
+                    <li>
+                      <b>Elements Tab:</b> Shows the HTML structure of the page. You can click on elements to see their corresponding CSS rules.
+                    </li>
+                    <li>
+                      <b>Styles Pane:</b> (Usually on the right or bottom) Displays the CSS applied to the selected element.
+                      <ul>
+                        <li>You can *temporarily* modify CSS values directly in the Styles pane to see the effects in real-time. *Changes are not saved* when you refresh the page. This is great for experimentation.</li>
+                      </ul>
+                    </li>
+                    <li>
+                      <b>Box Model Visualization:</b> The styles pane often includes a visual representation of the box model (content, padding, border, margin) for the selected element. This helps you understand how spacing is applied.
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <section class="section">
+      <h2>2.5 Positioning Elements with CSS</h2>
+        <div class="notes">
+            <div class="note-title">Notes:</div>
+            <div class="note-list">
+              <ul>
+                <li>
+                  <b>The Problem:</b> By default, block-level elements (like <div>) take up the full width of their container and stack vertically. How do you arrange elements horizontally, center them, or position them in specific locations?
+                </li>
+                <li>
+                <b>Old approach (not recommended):</b>
+                <div class="code-example">
+                    <pre><code>float</code></pre>
+                </div>
+              </li>
+                <li>
+                  <b>Best way (Recommended):</b> Flexbox.
+                </li>
+
+              </ul>
+            </div>
+        </div>
+    </section>
+
+    <section class="section">
+        <h2>2.6 Flexbox: The Modern Way to Layout Elements</h2>
+          <div class="notes">
+            <div class="note-title">Notes:</div>
+            <div class="note-list">
+                <ul>
+                  <li><b>What is Flexbox?</b> Flexbox (Flexible Box Layout) is a powerful CSS layout module designed for creating one-dimensional layouts (either rows or columns). It provides a flexible and efficient way to distribute space and align items within a container.</li>
+                  <li>
+                    <b>Key Concepts</b>
+                    <ul>
+                        <li><b>Flex Container:</b> The parent element that you apply display: flex to. This makes its direct children become flex items.</li>
+                        <li><b>Flex Items:</b> The direct children of the flex container.</li>
+                    </ul>
+                  </li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="interactive-area">
+            <div class="input-area">
+                <label for="interactive-code-flexbox">Experiment with Flexbox:</label>
+                <textarea id="interactive-code-flexbox"><div style="display: flex; justify-content: center;">
+    <div>Child 1</div>
+    <div>Child 2</div>
+</div></textarea>
+                <button onclick="updateOutput('interactive-code-flexbox', 'interactive-result-flexbox')">Update</button>
+            </div>
+            <div class="output-area">
+                <div class="interactive-result" id="interactive-result-flexbox"></div>
+            </div>
+        </div>
+
+        <h3>justify-content (Main Axis Alignment)</h3>
+        <p>Controls how flex items are positioned along the *main axis* of the flex container (horizontally by default).</p>
+        <ul>
+            <li><code>justify-content: flex-start;</code> (Default): Items are packed toward the start.</li>
+            <li><code>justify-content: flex-end;</code> Items are packed toward the end.</li>
+            <li><code>justify-content: center;</code> Items are centered.</li>
+            <li><code>justify-content: space-between;</code> Items are evenly distributed, with the first at the start, the last at the end, and equal space between.</li>
+            <li><code>justify-content: space-around;</code> Items are evenly distributed with equal space around them (including the ends).</li>
+        </ul>
+
+        <h3>Nested Flexbox</h3>
+        <div class="notes">
+            <div class="note-title">Notes:</div>
+            <div class="note-list">
+              <ul>
+                <li>
+                  If we want to position element inside a flex box we can do so by adding `display:flex` to their parent element.
+                </li>
+              </ul>
+            </div>
+         </div>
+        <div class="interactive-area">
+            <div class="input-area">
+                <label for="interactive-code-nested-flexbox">Experiment with nested Flexbox:</label>
+                <textarea id="interactive-code-nested-flexbox"><div style="display: flex; justify-content: space-around;">
+    <div style="background-color: lightblue; padding: 10px;">Item 1</div>
+    <div style="display: flex; justify-content: center; background-color: lightgreen; padding: 10px;">
+        <div>Subitem A</div>
+        <div>Subitem B</div>
+    </div>
+</div></textarea>
+                <button onclick="updateOutput('interactive-code-nested-flexbox', 'interactive-result-nested-flexbox')">Update</button>
+            </div>
+            <div class="output-area">
+               <div class="interactive-result" id="interactive-result-nested-flexbox"></div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section">
+      <h2>2.7 Building the Zerotha Landing Page (Continued - with CSS)</h2>
+      <p>Check video to know more</p>
+    </section>
+
+
+    <script>
+        // Function to update the output area
+        function updateOutput(textareaId, outputId) {
+            const code = document.getElementById(textareaId).value;
+            document.getElementById(outputId).innerHTML = code;
+        }
+
+    </script>
+</body>
+</html>

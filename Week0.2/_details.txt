@@ -1,0 +1,17 @@
+## Small boi stuff
+- Tags
+- Attributes
+- Inline styles (bgcolor, fonts etc)
+- JS basics, data types, loops, fns
+
+## Big Boi stuff
+- External styles,classes and ids
+- flexbox
+- connecting JS to HTML (selector, DOM)
+- Chrome Dev tools
+
+-- building a very basic landing page to visit , only html and CSS
+
+<div> -> container/a division/ a full width of the page
+while <span> only takes the width of the text or content inside it
+
