@@ -81,7 +81,7 @@ app.put('/', (req, res) => {
         res.json({Health: `John's health status updated to: ${user[0].isHealthy}`,leftKidney: `${user[1].leftKidney}`, rightKidney: `${user[1].rightKidney}`});
     }
 );
-
+console.log('Stringfier Checking: ',JSON.stringify(user[1]['leftKidney']));
 app.delete('/', (req, res) => {
     if(user[0]['isHealthy'] == false && user[1]['leftKidney'] == false && user[1]['rightKidney'] == false){
         res.status(400).json({message: "John's kidneys are already bad"});
