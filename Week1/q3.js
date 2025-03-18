@@ -10,7 +10,7 @@ function terminalClock() {
       console.log(timeString);
     }
   
-    // Update the clock every second
+    // Update the clock every second and stop it after 30 second
     setInterval(updateClock, 1000);
   
     // Initial call to display the clock immediately

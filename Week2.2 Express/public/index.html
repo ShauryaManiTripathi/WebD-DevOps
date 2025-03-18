@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Audio Chat Room</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+    .container {
+      background-color: #f5f5f5;
+      border-radius: 8px;
+      padding: 20px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+    h1 {
+      text-align: center;
+      color: #333;
+    }
+    .status {
+      margin-bottom: 20px;
+      padding: 10px;
+      background-color: #e1f5fe;
+      border-radius: 4px;
+    }
+    .audio-container {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      margin-top: 20px;
+    }
+    audio {
+      width: 100%;
+    }
+    .room-info {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 20px;
+    }
+    button {
+      padding: 8px 16px;
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #45a049;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Audio Chat Room</h1>
+    
+    <div class="room-info">
+      <p>Room ID: <span id="roomId"></span></p>
+      <button onclick="copyRoomLink()">Copy Room Link</button>
+    </div>
+    
+    <div class="status">
+      <p id="localStatus">Connecting to microphone...</p>
+      <p id="connectionStatus">Waiting for other participants...</p>
+    </div>
+    
+    <div class="audio-container">
+      <h3>Your Microphone</h3>
+      <audio id="localAudio" muted controls></audio>
+      
+      <h3>Remote Participants</h3>
+      <div id="remoteAudio"></div>
+    </div>
+  </div>
+
+  <script src="/socket.io/socket.io.js"></script>
+  <script src="/script.js"></script>
+  <script>
+    function copyRoomLink() {
+      const link = window.location.href;
+      navigator.clipboard.writeText(link).then(() => {
+        alert('Room link copied to clipboard!');
+      }).catch(err => {
+        console.error('Failed to copy link: ', err);
+      });
+    }
+  </script>
+</body>
+</html>

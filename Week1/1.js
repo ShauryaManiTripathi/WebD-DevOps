@@ -138,3 +138,33 @@ console.log(Date.now());
 // js uses web speech to speech recognition
 // js uses web animation to animate elements
 // js uses web components to create custom elements
+
+
+console.log(parseFloat("10.33"));
+console.log(parseInt("10.33"));
+console.log(parseInt("10.33",10));
+console.log(parseFloat("z610d.33dddd"));
+
+
+const arr = [1, 2, 3];
+const newLength = arr.unshift(0, -1); // const disallows reassignment, but allows mutation, which is possible for arrays and objects
+console.log(arr);       // Output: [0, -1, 1, 2, 3]
+console.log(newLength); // Output: 5
+
+arr.forEach(function(element, index) {
+    console.log(`Element at index ${index}: ${element}`);
+});
+
+
+const ages = [21, 22, 23, 24, 25, 26, 100];
+
+const numberOfPeople = ages.length; // Get array length and store in a variable
+
+for (let i = 0; i < numberOfPeople; i++) { // Loop through the array using index 'i'
+    if (ages[i] % 2 === 0) {        // Check if the element at index 'i' is even using the modulo operator (%)
+        console.log(ages[i]);       // If even, print the element
+    }
+}
+// Output: 22, 24, 26, 100
+console.log(ages[0]);
+
