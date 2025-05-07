@@ -1,0 +1,40 @@
+<script>
+    async function fetchh(){
+        const response = await fetch('http://localhost:3000/users', {
+            method: 'GET',
+            headers: {
+                "authorization": localStorage.getItem('token')
+            }
+        });
+        if (response.ok) {
+            const data = await response.json();
+            console.log(data);
+        } else {
+            console.error('Error fetching data:', response.statusText);
+        }
+    }
+    async function signin(){
+        const username = document.getElementById('username').value;
+        const password = document.getElementById('password').value;
+        const response = await fetch('http://localhost:3000/signin', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({ username, password })
+        });
+        if (response.ok) {
+            const data = await response.json();
+            localStorage.setItem('token', data.token);
+            console.log(data);
+        } else {
+            console.error('Error signing in:', response.statusText);
+        }
+    }
+</script>
+<button onclick="fetchh()">Fetch Users</button>
+<form>
+    <input type="text" placeholder="username" id="username">
+    <input type="password" placeholder="password" id="password">
+    <button onclick="signin()">Sign In</button>
+</form> 

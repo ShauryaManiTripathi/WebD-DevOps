@@ -59,6 +59,15 @@ app.post('/v2', (req, res) => {
     res.json({message: `John's health status updated to: ${isHealthy}`});
 }
 );
+
+
+app.get('/:id', (req, res) => {
+    const id = req.params.id;
+    console.log(`ID: ${id}`);
+    res.send(`ID: ${id}`);
+}
+);
+
 // v2 needs middleware to parse the body, body-parsers
 
 app.use(express.json()); // for parsing application/json
