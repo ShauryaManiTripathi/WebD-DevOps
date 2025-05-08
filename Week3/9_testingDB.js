@@ -75,6 +75,7 @@ async function addUsers() {
 setTimeout(()=>{
     User.find({}).then((users) => {
         console.log("All users", users);
+        mongoose.connection.close();
     });
 }, 2000);
 
@@ -83,3 +84,5 @@ setTimeout(()=>{
 //   .then(() => console.log("All users deleted"))
 //   .catch((err) => console.error("Error deleting users", err));
 // }, 5000);
+
+
