@@ -4,51 +4,51 @@ This readme contains a structured todo list for web development learning, coveri
 
 ## Foundation
 
-- [ ] JavaScript fundamentals
-  - [ ] Asynchronous nature of JS (Promises, async/await, callbacks)
-  - [ ] Event loop and concurrency model
-- [ ] Node.js
-  - [ ] Runtime environment and architecture
-  - [ ] Core modules
-  - [ ] Event-driven programming
-- [ ] Databases
-  - [ ] NoSQL basics and concepts
-  - [ ] SQL fundamentals and best practices
-  - [ ] MongoDB deep dive (schemas, queries, aggregation pipeline)
-  - [ ] PostgreSQL deep dive (relational design, advanced queries, indexing)
-- [ ] TypeScript
-  - [ ] Basic types and interfaces
+- [x] JavaScript fundamentals
+  - [x] Asynchronous nature of JS (Promises, async/await, callbacks)
+  - [x] Event loop and concurrency model
+- [x] Node.js
+  - [x] Runtime environment and architecture
+  - [x] Core modules
+  - [x] Event-driven programming
+- [x] Databases
+  - [x] NoSQL basics and concepts
+  - [x] SQL fundamentals and best practices
+  - [x] MongoDB deep dive (schemas, queries, aggregation pipeline)
+  - [x] PostgreSQL deep dive (relational design, advanced queries, indexing)
+- [x] TypeScript
+  - [x] Basic types and interfaces
   - [ ] Advanced types (unions, generics, utility types)
   - [ ] Type narrowing and type guards
   - [ ] Declaration files
 
 ## Backend
 
-- [ ] Communication protocols
-  - [ ] REST
+- [x] Communication protocols
+  - [x] REST
   - [ ] GraphQL
-  - [ ] WebSockets
-- [ ] Express.js
-  - [ ] Routing and middleware basics
-  - [ ] Advanced patterns and best practices
+  - [x] WebSockets
+- [x] Express.js
+  - [x] Routing and middleware basics
+  - [x] Advanced patterns and best practices
   - [ ] Performance optimization
 - [ ] ORMs
   - [ ] Sequelize
   - [ ] Prisma
   - [ ] TypeORM
-- [ ] Backend architecture
-  - [ ] Middlewares
-  - [ ] Routes organization
+- [x] Backend architecture
+  - [x] Middlewares
+  - [x] Routes organization
   - [ ] Status codes and error handling
   - [ ] Global error handlers
-- [ ] Data validation with Zod
+- [x] Data validation with Zod
 - [ ] Monorepo implementation with Turborepo
 - [ ] Serverless backend development
 - [ ] OpenAPI Specification
   - [ ] Creating API documentation
   - [ ] Auto-generating clients
-- [ ] Authentication
-  - [ ] JWT
+- [x] Authentication
+  - [x] JWT
   - [ ] OAuth
   - [ ] Auth libraries
 - [ ] Node.js scaling strategies
@@ -59,8 +59,8 @@ This readme contains a structured todo list for web development learning, coveri
 
 ## Frontend
 
-- [ ] Frontend frameworks and reconcilers
-  - [ ] Virtual DOM concept
+- [x] Frontend frameworks and reconcilers
+  - [x] Virtual DOM concept
   - [ ] Diffing algorithms
 - [ ] React
   - [ ] Components and props
