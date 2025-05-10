@@ -10,7 +10,9 @@
     </style>
     <body>
         <!--! difference in oninput and onchange-->
-        <!--! also use debouncing/throttling to control API call rate -->
+        <!--! also use debouncing to only respond to latest API call -->
+        <!-- ! throttling means slowing down the speed of response if too many requests are made -->
+         <!-- ! rate limiting means rejecting request -->
         <input oninput="debouncedcalcSum2('finalsum1','i1','i2')" type="text" placeholder="newnumber" id="i1"><br>
         <input onchange="calcSum2('finalsum1','i1','i2')"  type="text" placeholder="secondnewnumber" id="i2">
         <br>
