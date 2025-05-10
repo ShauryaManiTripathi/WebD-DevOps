@@ -1,0 +1,61 @@
+
+<html>
+    <style>
+        .container{
+            background-color: red;
+            font-size: 20;
+            color: green;
+            margin:100;
+        }
+    </style>
+    <body>
+        <!--! difference in oninput and onchange-->
+        <!--! also use debouncing/throttling to control API call rate -->
+        <input oninput="debouncedcalcSum2('finalsum1','i1','i2')" type="text" placeholder="newnumber" id="i1"><br>
+        <input onchange="calcSum2('finalsum1','i1','i2')"  type="text" placeholder="secondnewnumber" id="i2">
+        <br>
+        <div id="finalsum1"></div>
+        <input type="text" placeholder="newnumber" id="i3"><br>
+        <input type="text" placeholder="secondnewnumber" id="i4">
+        <br>
+        <button id="b1" onclick="calcSum('finalsum2','i3','i4')">Submit</button>
+        <div id="finalsum2"></div>
+        <script>
+            let timer;
+            function calcSum(str,i1,i2){
+                const a = document.getElementById(i1).value;
+                const b = document.getElementById(i2).value;
+                const output = document.getElementById(str);
+                output.innerHTML=parseInt(a)+parseInt(b);
+            }
+            async function calcSum2(str,i1,i2){
+                const a = document.getElementById(i1).value;
+                const b = document.getElementById(i2).value;
+                let output = await fetch(`http://localhost:3001/interest?principal=${a}&rate=${b}&time=2`);
+                output = await output.json();
+                console.log(output);
+                const outputDiv = document.getElementById(str);
+                outputDiv.innerHTML = `The interest is ${output.interest} and the total amount is ${output.total}`;
+            }
+            // ! this is called debouncing or throttling
+            async function debouncedcalcSum2(str,i1,i2){
+                if(timer){
+                    clearTimeout(timer);
+                }
+                timer = setTimeout(calcSum2, 500, str,i1,i2);
+            }
+        </script>
+
+        <br>
+        <div class="container" id="c1">
+            Classes let us get rid of repetitions
+        </div>
+        <div class="container" id="c2">
+            ids give uniqueness to each element
+        </div> 
+        <div id="onceawisesaid">
+            DOM apis let us access DOM structure and read/write it
+        </div>
+    </body>
+</html><!--Dont have same ID for two elements-->
+

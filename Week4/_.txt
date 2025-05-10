@@ -1,0 +1,11 @@
+some extra things are being used in browser, outside standard JS specifications
+major ones namely
+    setInterval
+    setTimeout
+    fetch-------|
+    document----|
+                |
+                |
+                We will cover these two in this Week
+
+exactly DOM and basic frontend
